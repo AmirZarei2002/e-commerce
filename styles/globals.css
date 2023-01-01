@@ -1,26 +1,76 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@layer base {
+  @font-face {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
   }
+
   body {
-    color: white;
-    background: black;
+    font-family: 'Roboto', sans-serif;
+    background: rgb(36, 48, 95);
+    background: linear-gradient(150deg, rgba(36, 48, 95, 1) 0%, rgba(55, 71, 133, 1) 10%, rgba(247, 108, 108, 1) 40%, rgba(248, 233, 161, 1) 65%, rgba(140, 174, 207, 1) 85%);
   }
+}
+
+@layer utilities {
+  .bg-dark-slate {
+    background-color: #24305F;
+  }
+
+  .bg-light-slate {
+    background-color: #374785;
+  }
+
+  .bg-sky-blue {
+    background-color: #A8D0E6;
+  }
+
+  .bg-light-red {
+    background-color: #F76C6C;
+  }
+
+  .bg-light-yellow {
+    background-color: #F8E9A1;
+  }
+
+  .dark-slate {
+    color: #24305F;
+  }
+
+  .light-slate {
+    color: #374785;
+  }
+
+  .sky-blue {
+    color: #A8D0E6;
+  }
+
+  .light-red {
+    color: #F76C6C;
+  }
+
+  .light-yellow {
+    color: #F8E9A1;
+  }
+}
+
+.card {
+  @apply mb-4 block rounded-lg border shadow-md
+}
+
+
+input,
+select,
+textarea {
+  @apply rounded border p-2 ring-indigo-300 focus:ring; 
+}
+
+.dropdown-link {
+  @apply flex p-2 hover:bg-gray-200;
 }
