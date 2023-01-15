@@ -31,7 +31,7 @@ export default function Navbar() {
 
     return (
         <header
-            className="shadow-sm bg-sky-blue dark-slate"
+            className="shadow-sm bg-cyan-600"
             data-aos="fade-right"
             data-aos-offset="300"
             data-aos-easing="ease-in-sine"
@@ -98,51 +98,51 @@ export default function Navbar() {
                 </div>
 
                 <div className="flex w-0 flex-1 justify-end lg:hidden">
-                {status === 'loading' ? (
-                            'Loading'
-                        ) : session?.user ? (
-                            <Menu
-                                as="div"
-                                className="rounded-lg relative px-2 bg-gray-100 text-sm font-medium text-gray-600"
-                            >
-                                <Menu.Button className="text-blue-600">
-                                    {session.user.name}
-                                </Menu.Button>
-                                <Menu.Items className="bg-white shadow-lg absolute right-0 p-2 w-fit">
-                                    <Menu.Item>
-                                        <DropdownLink
-                                            className="dropdown-link"
-                                            href="/profile"
-                                        >
-                                            Profile
-                                        </DropdownLink>
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        <DropdownLink
-                                            className="dropdown-link"
-                                            href="/order-history"
-                                        >
-                                            Order History
-                                        </DropdownLink>
-                                    </Menu.Item>
-                                    <Menu.Item>
-                                        <a
-                                            className="dropdown-link"
-                                            href="#"
-                                            onClick={logoutClickHandler}
-                                        >
-                                            Logout
-                                        </a>
-                                    </Menu.Item>
-                                </Menu.Items>
-                            </Menu>
-                        ) : (
-                            <Link href="/login">
-                                <a className="flex-shrink-0 rounded-lg bg-gray-100 px-2 mx-1 py-1 text-sm font-medium text-gray-600">
-                                    Login
-                                </a>
-                            </Link>
-                        )}
+                    {status === 'loading' ? (
+                        'Loading'
+                    ) : session?.user ? (
+                        <Menu
+                            as="div"
+                            className="rounded-lg relative px-2 bg-gray-100 text-sm font-medium text-gray-600"
+                        >
+                            <Menu.Button className="text-blue-600">
+                                {session.user.name}
+                            </Menu.Button>
+                            <Menu.Items className="bg-white shadow-lg absolute right-0 p-2 w-fit">
+                                <Menu.Item>
+                                    <DropdownLink
+                                        className="dropdown-link"
+                                        href="/profile"
+                                    >
+                                        Profile
+                                    </DropdownLink>
+                                </Menu.Item>
+                                <Menu.Item>
+                                    <DropdownLink
+                                        className="dropdown-link"
+                                        href="/order-history"
+                                    >
+                                        Order History
+                                    </DropdownLink>
+                                </Menu.Item>
+                                <Menu.Item>
+                                    <a
+                                        className="dropdown-link"
+                                        href="#"
+                                        onClick={logoutClickHandler}
+                                    >
+                                        Logout
+                                    </a>
+                                </Menu.Item>
+                            </Menu.Items>
+                        </Menu>
+                    ) : (
+                        <Link href="/login">
+                            <a className="flex-shrink-0 rounded-lg bg-gray-100 px-2 mx-1 py-1 text-sm font-medium text-gray-600">
+                                Login
+                            </a>
+                        </Link>
+                    )}
                 </div>
 
                 <nav className="hidden items-center justify-center gap-8 text-sm font-medium lg:flex lg:w-0 lg:flex-1">
