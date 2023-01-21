@@ -4,10 +4,11 @@ import Layout from '../components/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { MdDeleteOutline } from 'react-icons/md';
-import { HiOutlineShoppingBag } from 'react-icons/hi';
-import { IoBagCheckOutline } from 'react-icons/io5';
 import dynamic from 'next/dynamic';
+
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import DeleteIcon from '@mui/icons-material/Delete';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const CartScreen = () => {
   const router = useRouter();
@@ -26,14 +27,14 @@ const CartScreen = () => {
     <Layout title="Shopping Cart">
       <h1 className="mb-4 text-xl flex items-center justify-center light-yellow gap-2 font-mono opacity-90 2xl:text-4xl">
         Shopping Cart
-        <HiOutlineShoppingBag className="text-2xl 2xl:text-4xl" />
+        <ShoppingCartIcon className="text-2xl 2xl:text-4xl" />
       </h1>
       {cartItems.length === 0 ? (
         <div
           className="flex items-center justify-center mt-10 font-semibold text-lg font-mono gap-1 text-white/75 2xl:text-4xl"
         >
           Cart is empty!
-          <div className="animate-pulse duration-300 light-red sm:light-slate">
+          <div className="duration-300 light-red sm:light-slate">
             <Link href="/"> Go shopping &#128521;</Link>
           </div>
         </div>
@@ -89,7 +90,7 @@ const CartScreen = () => {
                     <td className="p-5 text-right">${item.price}</td>
                     <td className="p-5 text-center">
                       <button onClick={() => removeItemHandler(item)}>
-                        <MdDeleteOutline className="h-5 w-5 hover:light-red mt-1" />
+                        <DeleteIcon className="h-5 w-5 hover:light-red mt-1" />
                       </button>
                     </td>
                   </tr>
@@ -111,7 +112,7 @@ const CartScreen = () => {
                   onClick={() => router.push('login?redirect=/shipping')}
                 >
                   chack out
-                  <IoBagCheckOutline className="text-lg mb-[3px]" />
+                  <AddShoppingCartIcon className="text-lg mb-[3px]" />
                 </button>
               </li>
             </ul>

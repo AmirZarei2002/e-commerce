@@ -5,15 +5,17 @@ import { Store } from '../../utils/Store';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
 import data from '../../utils/data';
-import { IoChevronBackCircle, IoHome } from 'react-icons/io5';
-import { IoIosHeart } from 'react-icons/io';
-import { BiCategory } from 'react-icons/bi';
-import { AiOutlineStar } from 'react-icons/ai';
-import { TbFileDescription, TbBrandAirtable } from 'react-icons/tb';
-import { TiTickOutline, TiTick } from 'react-icons/ti';
-import { FaDollarSign } from 'react-icons/fa';
-import { MdOutlineAddShoppingCart } from 'react-icons/md';
-import { GrStatusPlaceholder } from 'react-icons/gr';
+
+// icons
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import HomeIcon from '@mui/icons-material/Home';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import CategoryIcon from '@mui/icons-material/Category';
+import StarRateIcon from '@mui/icons-material/StarRate';
+import BrandingWatermarkIcon from '@mui/icons-material/BrandingWatermark';
+import DescriptionIcon from '@mui/icons-material/Description';
+import DoneIcon from '@mui/icons-material/Done';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 export default function ProductScreen() {
     const { state, dispatch } = useContext(Store);
@@ -46,45 +48,45 @@ export default function ProductScreen() {
                 data-aos-offset="200"
                 data-aos-easing="ease-in-sine"
                 data-aos-duration="600"
-                className="flex items-center justify-around bg-gradient-to-l from-slate-600 to-slate-500 px-4 py-1 rounded-lg mb-3"
+                className="flex items-center justify-around bg-gradient-to-l from-slate-600 to-slate-500 px-4 py-1 rounded-t-lg mb-3"
             >
                 <div>
                     <button
                         type="button"
-                        className="bg-light-red rounded-xl text-white p-1 text-[1.5rem] hover:translate-y-1 duration-200"
+                        className="bg-light-red rounded-sm px-2 sm:px-4 sm:py-1 text-white hover:translate-y-1 duration-300"
                     >
                         <Link href="/">
-                            <IoChevronBackCircle />
+                            <ChevronLeftIcon />
                         </Link>
                     </button>
                 </div>
                 <div>
                     <button
                         type="button"
-                        className="bg-light-red rounded-xl text-white p-1 text-[1.5rem] hover:translate-y-1 duration-200"
+                        className="bg-light-red rounded-sm px-2 sm:px-4 sm:py-1 text-white hover:translate-y-1 duration-300"
                     >
                         <Link href="/">
-                            <IoHome />
+                            <HomeIcon />
                         </Link>
                     </button>
                 </div>
                 <div>
                     <button
                         type="button"
-                        className="bg-light-red rounded-xl text-white p-1 text-[1.5rem] hover:translate-y-1 duration-200"
+                        className="bg-light-red rounded-sm px-2 sm:px-4 sm:py-1 text-white hover:translate-y-1 duration-300"
                     >
                         <Link href="/">
-                            <BiCategory />
+                            <CategoryIcon />
                         </Link>
                     </button>
                 </div>
                 <div>
                     <button
                         type="button"
-                        className="bg-light-red rounded-xl text-white p-1 text-[1.5rem] hover:translate-y-1 duration-200"
+                        className="bg-light-red rounded-sm px-2 sm:px-4 sm:py-1 text-white hover:translate-y-1 duration-300"
                     >
                         <Link href="/">
-                            <IoIosHeart />
+                            <FavoriteIcon />
                         </Link>
                     </button>
                 </div>
@@ -92,8 +94,8 @@ export default function ProductScreen() {
             {/* end of top navbar */}
             {/* card details */}
             <section
-                data-aos-duration="600"
-                data-aos="zoom-in-right"
+                // data-aos-duration="600"
+                // data-aos="zoom-in-right"
                 className="bg-light-yellow"
             >
                 <div className="grid md:grid-cols-3">
@@ -108,31 +110,31 @@ export default function ProductScreen() {
                         ></Image>
                     </div>
                     <div className="grid">
-                        <div className="bg-light-slate w-full h-fit py-1 text-center rounded-b-xl">
-                            <h1 className="text-white text-md sm:text-xl animate-pulse">
+                        <div className="bg-light-slate w-full h-fit py-1 text-center rounded-b-md">
+                            <h1 className="text-white text-md sm:text-xl">
                                 {product.name} Details
                             </h1>
                         </div>
                         <div className="light-slate mt-2">
                             <ul className="space-y-2 px-4 lg:space-y-8">
                                 <li className="flex gap-1">
-                                    <TiTickOutline className="text-xl sm:text-2xl light-red" />
+                                    <DoneIcon className="text-xl sm:text-2xl light-red" />
                                     <h2 className="text-lg">{product.name}</h2>
                                 </li>
                                 <li className="flex gap-1">
-                                    <BiCategory className="text-xl sm:text-2xl light-red" />
+                                    <CategoryIcon className="text-xl sm:text-2xl light-red" />
                                     {product.category}
                                 </li>
                                 <li className="flex gap-1">
-                                    <TbBrandAirtable className="text-xl sm:text-2xl light-red" />{' '}
+                                    <BrandingWatermarkIcon className="text-xl sm:text-2xl light-red" />{' '}
                                     {product.brand}
                                 </li>
                                 <li className="flex gap-1">
-                                    <AiOutlineStar className="text-xl sm:text-2xl light-red" />{' '}
+                                    <StarRateIcon className="text-xl sm:text-2xl light-red" />{' '}
                                     {product.rating} of {product.numReviews}
                                 </li>
                                 <li className="flex gap-1 truncate">
-                                    <TbFileDescription className="text-xl sm:text-2xl light-red" />
+                                    <DescriptionIcon className="text-xl sm:text-2xl light-red" />
                                     {product.description}
                                 </li>
                             </ul>
@@ -146,21 +148,11 @@ export default function ProductScreen() {
                             </p>
                         </div>
                         <div className="self-end">
-                            <div className="flex flex-col pt-2 w-full text-white rounded-t-lg shadow-lg bg-light-slate">
+                            <div className="flex flex-col pt-2 w-full text-white rounded-t-md shadow-lg bg-light-slate">
                                 <div className="flex justify-center items-center mr-6">
-                                    <FaDollarSign />
+                                    {/* <FaDollarSign /> */}
                                     <div className="text-md">
-                                        {product.price}
-                                    </div>
-                                </div>
-                                <div className="flex justify-center items-center gap-2">
-                                    <p className="text-md">status</p>
-                                    <div>
-                                        {product.countInStock > 0 ? (
-                                            <GrStatusPlaceholder className="bg-white" />
-                                        ) : (
-                                            <TiTick />
-                                        )}
+                                        {product.price}$
                                     </div>
                                 </div>
                                 <div>
@@ -169,7 +161,7 @@ export default function ProductScreen() {
                                         onClick={addToCartHandler}
                                     >
                                         Add to Cart{' '}
-                                        <MdOutlineAddShoppingCart className="text-md sm:text-xl" />
+                                        <AddBoxIcon className="text-md sm:text-xl" />
                                     </button>
                                 </div>
                             </div>

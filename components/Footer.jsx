@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { CgShoppingBag } from 'react-icons/cg';
+import LocalMallIcon from '@mui/icons-material/LocalMall';
 
 export default function Footer() {
   return (
@@ -10,9 +10,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
             <div className="flex justify-center light-yellow gap-2 sm:justify-start">
-              <CgShoppingBag className="text-[2.3rem]" />
+              <LocalMallIcon className="text-[2.3rem]" />
               <Link href="/">
-                <a className="font-mono text-3xl animate-pulse">E-commerce</a>
+                <a className="font-mono text-3xl">E-commerce</a>
               </Link>
             </div>
             <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:mx-0 sm:max-w-xs sm:text-left">
