@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@headlessui/react": "^1.7.4",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.5",
     "aos": "^3.0.0-beta.6",
     "axios": "^1.2.2",
     "bcryptjs": "^2.4.3",
@@ -20,7 +24,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.38.0",
-    "react-icons": "^4.4.0",
     "react-toastify": "^9.0.8"
   },
   "devDependencies": {
