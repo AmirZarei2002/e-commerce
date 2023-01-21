@@ -13,8 +13,8 @@
 
   body {
     font-family: 'Roboto', sans-serif;
-    background: rgb(36, 48, 95);
-    background: linear-gradient(150deg, rgba(36, 48, 95, 1) 0%, rgba(55, 71, 133, 1) 10%, rgba(247, 108, 108, 1) 40%, rgba(248, 233, 161, 1) 65%, rgba(140, 174, 207, 1) 85%);
+    background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(85,162,251,1) 100%);
   }
 }
 
