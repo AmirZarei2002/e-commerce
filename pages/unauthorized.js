@@ -1,4 +1,4 @@
-import Link from 'next/link';
+// import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
 
@@ -10,10 +10,10 @@ export default function Unauthorized() {
     <Layout title="Unauthorized Page">
       <div className="flex flex-col gap-3 text-center justify-center place-items-center p-8 rounded-t-md text-xl">
         <h1 className="text-xl font-semibold text-white/80">Access Denied !</h1>
-        {message && (
+        {message &&
           <div className="mb-4 dark-slate font-semibold">{message}</div>
-        )}
-        <div>
+        }
+        {/* <div>
           <Link href="/login">
             <a className="rounded-lg w-fit bg-white/80 dark-slate px-5 py-2 text-sm font-medium">
               Log in
@@ -25,7 +25,7 @@ export default function Unauthorized() {
               sign up
             </a>
           </Link>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );
