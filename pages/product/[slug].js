@@ -4,7 +4,6 @@ import React, { useContext } from 'react';
 import { Store } from '../../utils/Store';
 import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
-import data from '../../utils/data';
 
 // icons
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -16,26 +15,35 @@ import BrandingWatermarkIcon from '@mui/icons-material/BrandingWatermark';
 import DescriptionIcon from '@mui/icons-material/Description';
 import DoneIcon from '@mui/icons-material/Done';
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import db from '../../utils/db';
+import Product from '../../models/Product';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
-export default function ProductScreen() {
+export default function ProductScreen(props) {
+    const { product } = props;
     const { state, dispatch } = useContext(Store);
     const router = useRouter();
-    const { query } = useRouter();
-    const { slug } = query;
-    const product = data.products.find((x) => x.slug === slug);
     if (!product) {
-        return <div>Products Not Found</div>;
+        return (
+            <Layout title="Products Not Found">
+                <h1 className="text-xl text-white font-semibold">
+                    Products Not Found😕
+                </h1>
+            </Layout>
+        );
     }
 
-    const addToCartHandler = () => {
+    const addToCartHandler = async () => {
         const existItem = state.cart.cartItems.find(
             (x) => x.slug === product.slug
         );
         const quantity = existItem ? existItem.quantity + 1 : 1;
 
-        if (product.countInStock < quantity) {
-            alert('Sorry, Product is out of stock');
-            return;
+        const { data } = await axios.get(`/api/products/${product._id}`);
+
+        if (data.countInStock < quantity) {
+            return toast.error('Sorry. Product is out of stock');
         }
         dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
         router.push('/cart');
@@ -172,4 +180,18 @@ export default function ProductScreen() {
             {/* end of card details */}
         </Layout>
     );
+}
+
+export async function getServerSideProps(context) {
+    const { params } = context;
+    const { slug } = params;
+
+    await db.connect();
+    const product = await Product.findOne({ slug }).lean();
+    await db.disconnect();
+    return {
+        props: {
+            product: product ? db.convertDocToObj(product) : null,
+        },
+    };
 }
