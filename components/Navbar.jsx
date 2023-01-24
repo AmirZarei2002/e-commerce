@@ -31,7 +31,8 @@ export default function Navbar() {
 
     return (
         <header
-            className="shadow-sm bg-cyan-600"
+            className="shadow-sm bg-gradient-to-r from-cyan-700
+            to-sky-400"
             data-aos="fade-right"
             data-aos-offset="300"
             data-aos-easing="ease-in-sine"
@@ -71,7 +72,7 @@ export default function Navbar() {
                     <form className="mb-0 hidden lg:flex">
                         <div className="relative">
                             <input
-                                className="h-10 rounded-lg border-gray-200 pr-10 pl-2 text-sm placeholder-gray-300 focus:z-10"
+                                className="h-10 rounded-lg border-gray-200 pr-10 pl-2 text-sm placeholder-gray-300 font-thin outline-none"
                                 placeholder="Search..."
                                 type="text"
                             />
@@ -147,7 +148,7 @@ export default function Navbar() {
 
                 <nav className="hidden items-center justify-center gap-8 text-sm font-medium lg:flex lg:w-0 lg:flex-1">
                     <Link href="/cart">
-                        <a className="text-gray-900 text-lg font-mono hover:light-yellow">
+                        <a className="text-white text-lg font-mono hover:light-yellow">
                             Cart
                             {cartItemsCount > 0 && (
                                 <span className="ml-1 rounded-full bg-light-red text-white text-xs font-bold px-2 py-1">
@@ -157,12 +158,12 @@ export default function Navbar() {
                         </a>
                     </Link>
                     <Link href="/about">
-                        <a className="text-gray-900 text-lg font-mono hover:light-yellow">
+                        <a className="text-white text-lg font-mono hover:light-yellow">
                             About
                         </a>
                     </Link>
                     <Link href="/contact">
-                        <a className="text-gray-900 text-lg font-mono hover:light-yellow">
+                        <a className="text-white text-lg font-mono hover:light-yellow">
                             Contact
                         </a>
                     </Link>
@@ -217,7 +218,7 @@ export default function Navbar() {
                 <nav className="flex justify-evenly py-2 text-sm font-medium">
                     <div>
                         <Link href="/cart">
-                            <a className="flex-shrink-0 sm:px-4 text-gray-900">
+                            <a className="flex-shrink-0 sm:px-4 text-white">
                                 Cart
                                 {cartItemsCount > 0 && (
                                     <span className="ml-1 rounded-full bg-light-red text-white text-xs font-bold px-2 py-1">
@@ -229,21 +230,18 @@ export default function Navbar() {
                     </div>
                     <div>
                         <Link href="/about">
-                            <a className="flex-shrink-0 px-3 sm:px-4 text-gray-900">
+                            <a className="flex-shrink-0 px-3 sm:px-4 text-white">
                                 About
                             </a>
                         </Link>
                     </div>
                     <div>
                         <Link href="/contact">
-                            <a className="flex-shrink-0 px-3 sm:px-4 text-gray-900">
+                            <a className="flex-shrink-0 px-3 sm:px-4 text-white">
                                 Contact
                             </a>
                         </Link>
                     </div>
-                    {/* <div>
-                       
-                    </div> */}
                 </nav>
             </div>
         </header>
