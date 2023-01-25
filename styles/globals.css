@@ -2,75 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-  @font-face {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 100;
-    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-  }
+    @font-face {
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 100;
+        src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+    }
 
-  body {
-    font-family: 'Roboto', sans-serif;
-    background: rgb(238,174,202);
-background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(85,162,251,1) 100%);
-  }
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: rgb(238, 174, 202);
+        background: radial-gradient(
+            circle,
+            rgba(238, 174, 202, 1) 0%,
+            rgba(85, 162, 251, 1) 100%
+        );
+    }
 }
 
 @layer utilities {
-  .bg-dark-slate {
-    background-color: #24305F;
-  }
+    .bg-dark-slate {
+        background-color: #24305f;
+    }
 
-  .bg-light-slate {
-    background-color: #374785;
-  }
+    .bg-light-slate {
+        background-color: #374785;
+    }
 
-  .bg-sky-blue {
-    background-color: #A8D0E6;
-  }
+    .bg-sky-blue {
+        background-color: #a8d0e6;
+    }
 
-  .bg-light-red {
-    background-color: #F76C6C;
-  }
+    .bg-light-red {
+        background-color: #f76c6c;
+    }
 
-  .bg-light-yellow {
-    background-color: #F8E9A1;
-  }
+    .bg-light-yellow {
+        background-color: #f8e9a1;
+    }
 
-  .dark-slate {
-    color: #24305F;
-  }
+    .dark-slate {
+        color: #24305f;
+    }
 
-  .light-slate {
-    color: #374785;
-  }
+    .light-slate {
+        color: #374785;
+    }
 
-  .sky-blue {
-    color: #A8D0E6;
-  }
+    .sky-blue {
+        color: #a8d0e6;
+    }
 
-  .light-red {
-    color: #F76C6C;
-  }
+    .light-red {
+        color: #f76c6c;
+    }
 
-  .light-yellow {
-    color: #F8E9A1;
-  }
+    .light-yellow {
+        color: #f8e9a1;
+    }
 }
 
 .card {
-  @apply mb-4 block rounded-lg border shadow-md
+    @apply mb-4 block rounded-lg border shadow-md;
 }
-
 
 input,
 select,
 textarea {
-  @apply rounded border p-2 ring-indigo-300 focus:ring; 
+    @apply rounded border p-2 ring-indigo-300 focus:ring;
 }
 
 .dropdown-link {
-  @apply flex p-2 hover:bg-gray-200;
+    @apply flex p-2 hover:bg-gray-200;
+}
+
+.alert-error {
+    @apply my-3 rounded-lg bg-red-100 p-3 text-red-700;
+}
+
+.alert-success {
+    @apply my-3 rounded-lg bg-red-100 p-3 text-green-700;
 }
