@@ -1,6 +1,5 @@
 import bcryptjs from 'bcryptjs';
 import db from '../../../utils/db';
-import { userAgent } from 'next/server';
 import User from '../../../models/User';
 
 async function handler(req, res) {
